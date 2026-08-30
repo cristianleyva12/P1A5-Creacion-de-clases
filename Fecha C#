@@ -1,0 +1,39 @@
+using System;
+
+public class Fecha {
+    public int mes;
+    public int dia;
+    public int anio;
+
+    public Fecha() {
+        mes = 0;
+        dia = 0;
+        anio = 0;
+    }
+
+    public void MostrarFecha() {
+        Console.WriteLine($"La fecha formateada es: {mes}/{dia}/{anio}");
+    }
+}
+
+class FechaTest {
+    static void Main() {
+        Fecha miFecha = new Fecha();
+
+        Console.Write("Ingresa el mes (1-12): ");
+        miFecha.mes = int.Parse(Console.ReadLine());
+        if (miFecha.mes < 1 || miFecha.mes > 12) {
+            miFecha.mes = 1;
+        }
+
+        Console.Write("Ingresa el dia (1-31): ");
+        miFecha.dia = int.Parse(Console.ReadLine());
+        if (miFecha.dia < 1 || miFecha.dia > 31) {
+            miFecha.dia = 1;
+        }
+
+        Console.Write("Ingresa el ano: ");
+        miFecha.anio = int.Parse(Console.ReadLine());
+
+        miFecha.MostrarFecha();
+    }

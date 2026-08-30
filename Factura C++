@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+class Factura {
+    
+public:
+    string numPieza;
+    string descripcion;
+    int cantidad;
+    double precio;
+    
+    //constructor
+    Factura(){
+        numPieza = "";
+        descripcion = "";
+        cantidad = 0;
+        precio = 0.0;
+    }
+    //metodo para obtener factura
+    double obtenerMontoFactura(){
+        //regresa el contenido cuando es invocado
+        return cantidad*precio;
+    }
+
+};
+
+int main() {
+    
+    Factura ferre;
+    
+    cout << "Ingresa el numero del articulo: ";
+    cin >> ferre.numPieza;
+    
+    cout << "Ingresa la descripcion del articulo: ";
+    cin >> ferre.descripcion;
+    
+    cout << "Ingresa la cantidad del producto: ";
+    cin >> ferre.cantidad;
+    
+    if (ferre.cantidad < 0) {
+        ferre.cantidad = 0;
+    }
+    
+    cout << "Ingresa el precio del articulo: ";
+    cin >> ferre.precio;
+    
+    if (ferre.precio < 0) {
+        ferre.precio = 0.0;
+    }
+    
+    cout << "--- FACTURA ---" << endl;
+    cout << "Numero de pieza: " << ferre.numPieza << endl;
+    cout << "Descripcion: " << ferre.descripcion << endl;
+    cout << "Cantidad: " << ferre.cantidad << endl;
+    cout << "Precio por articulo: $" << ferre.precio << endl;
+    cout << "Monto de la factura: $" << ferre.obtenerMontoFactura() << endl;
+    
+}

@@ -1,0 +1,50 @@
+using System;
+public class Factura {
+    public string numPieza;
+    public string descripcion;
+    public int cantidad;
+    public double precio;
+    
+    public Factura() {
+        numPieza =  "";
+        descripcion = "";
+        cantidad = 0;
+        precio = 0.0;
+    }
+    
+ public double obtenerMontoFactura() {
+    return cantidad*precio;
+    }
+}
+public class FacturaTest {
+    static void Main() {
+        Factura ferre = new Factura();
+        
+        Console.Write("Ingresa el numero de piezas: ");
+        ferre.numPieza = Console.ReadLine();
+        
+        Console.Write("Ingresa la descripcion de la pieza: ");
+        ferre.descripcion = Console.ReadLine();
+        
+        Console.Write("Ingresa la cantidad de la pieza: ");
+        ferre.cantidad = int.Parse(Console.ReadLine());
+        
+        if (ferre.cantidad < 0) {
+            ferre.cantidad = 0;
+        }
+        
+        Console.WriteLine("Ingresa el precio de la pieza: ");
+        ferre.precio = double.Parse(Console.ReadLine());
+        
+        if (ferre.precio < 0) {
+            ferre.precio = 0.0;
+        }
+        
+        Console.WriteLine("--- FACTURA ---");
+        Console.WriteLine("Numero de pieza: " + ferre.numPieza);
+        Console.WriteLine("Descripcion: " + ferre.descripcion);
+        Console.WriteLine("Cantidad: " + ferre.cantidad);
+        Console.WriteLine("Precio por articulo: " + ferre.precio);
+        Console.WriteLine("Monto de la factura: " + ferre.obtenerMontoFactura());
+    }
+}

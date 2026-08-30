@@ -1,0 +1,57 @@
+public class Empleado
+{
+	String nombre;
+	String apellidoPaterno;
+	double salarioMensual;
+	
+	Empleado() { //Constructor que inicializa las 4 variables
+        nombre = "";
+        apellidoPaterno = "";
+        salarioMensual = 0.0;
+    }
+    double obtenersalarioAnual() {
+        return salarioMensual * 12;
+	}
+}
+import java.util.Scanner;
+
+public class EmpleadoTest {
+    public static void main(String args[]) {
+        Empleado emp1 = new Empleado();
+        Empleado emp2 = new Empleado();
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Ingresa el nombre del Empleado 1: ");
+        emp1.nombre = input.nextLine();
+        
+        System.out.println("Agrega el apellido del Empleado 1: ");
+        emp1.apellidoPaterno = input.nextLine();
+        
+        System.out.println("Ingresa el salario mensual del Empleado 1: ");
+        emp1.salarioMensual = input.nextDouble();
+        input.nextLine();
+        
+        if (emp1.salarioMensual<0) emp1.salarioMensual = 0.0;
+        
+        System.out.println("Ingresa el nombre del Empleado 2: ");
+        emp2.nombre = input.nextLine();
+        
+        System.out.println("Agrega el apellido del Empleado 2: ");
+        emp2.apellidoPaterno = input.nextLine();
+        
+        System.out.println("Ingresa el salario mensual del Empleado 2: ");
+        emp2.salarioMensual = input.nextDouble();
+        input.nextLine();
+        
+        if (emp2.salarioMensual<0) emp2.salarioMensual = 0.0;
+        
+        System.out.println("Salario anual: "+emp1.obtenersalarioAnual());
+        System.out.println("Salario anual: "+emp2.obtenersalarioAnual());
+        
+        emp1.salarioMensual *= 1.10;
+        emp2.salarioMensual *= 1.10;
+        System.out.println("Salario despues del aumento del 10%");
+        System.out.println("Salario anual: "+emp1.obtenersalarioAnual());
+        System.out.println("Salario anual: "+emp2.obtenersalarioAnual());
+    }
+}

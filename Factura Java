@@ -1,0 +1,43 @@
+public class Factura
+{
+    //Atributo (variables instancias)
+    String  numPieza;
+    String descripcion;
+    int cantidad;
+    double precio;
+    
+    Factura() { //Constructor que inicializa las 4 variables
+        numPieza = "";
+        descripcion = "";
+        cantidad = 0;
+        precio = 0.0;
+    }
+    double obtenerMontoFactura() {
+        return cantidad*precio;
+	}
+}
+import java.util.Scanner;
+
+public class FacturaTest {
+    public static void main(String args[]) {
+        Factura ferre = new Factura();
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Ingresa el numero de la pieza: ");
+        ferre.numPieza = input.nextLine();
+        
+        System.out.println("Agrega la descripcion: ");
+        ferre.descripcion = input.nextLine();
+        
+        System.out.println("Cantidad: ");
+        ferre.cantidad = input.nextInt();
+        
+        System.out.println("Precio: ");
+        ferre.precio = input.nextDouble();
+        
+        if (ferre.precio<0) ferre.precio = 0.0;
+        if (ferre.cantidad<0) ferre.cantidad = 0;
+        
+        System.out.println("Factura: "+ferre.obtenerMontoFactura());
+    }
+}

@@ -1,0 +1,38 @@
+public class Fecha {
+    int mes;
+    int dia;
+    int anio;
+
+    Fecha() { 
+        mes = 0;
+        dia = 0;
+        anio = 0;
+    }
+
+    void mostrarFecha() {
+        System.out.println("Fecha: " + mes + "/" + dia + "/" + anio);
+    }
+}
+import java.util.Scanner;
+
+public class FechaTest {
+    public static void main(String args[]) {
+        Fecha miFecha = new Fecha();
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Ingresa el mes (1-12): ");
+        miFecha.mes = input.nextInt();
+
+        System.out.println("Ingresa el dia (1-31): ");
+        miFecha.dia = input.nextInt();
+
+        System.out.println("Ingresa el ano: ");
+        miFecha.anio = input.nextInt();
+
+        // Limitadores de rango
+        if (miFecha.mes < 1 || miFecha.mes > 12) miFecha.mes = 1;
+        if (miFecha.dia < 1 || miFecha.dia > 31) miFecha.dia = 1;
+
+        miFecha.mostrarFecha();
+    }
+}

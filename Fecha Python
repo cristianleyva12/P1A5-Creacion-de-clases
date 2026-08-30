@@ -1,0 +1,24 @@
+class Fecha:
+    def __init__(self):
+        self.mes = 0
+        self.dia = 0
+        self.anio = 0
+
+    def mostrarFecha(self):
+        print(f"La fecha formateada es: {self.mes}/{self.dia}/{self.anio}")
+
+
+# FechaTest
+miFecha = Fecha()
+
+miFecha.mes = int(input("Ingresa el mes (1-12): "))
+if miFecha.mes < 1 or miFecha.mes > 12:
+    miFecha.mes = 1
+
+miFecha.dia = int(input("Ingresa el dia (1-31): "))
+if miFecha.dia < 1 or miFecha.dia > 31:
+    miFecha.dia = 1
+
+miFecha.anio = int(input("Ingresa el anio: "))
+
+miFecha.mostrarFecha()

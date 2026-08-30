@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+class Empleado {
+    
+public:
+    string nombre;
+    string apellidoPaterno;
+    double salarioMensual;
+    
+    Empleado() {
+        nombre = "";
+        apellidoPaterno = "";
+        salarioMensual = 0.0;
+    }
+    
+    double obtenerSalarioAnual() {
+        return salarioMensual * 12;
+    }
+};
+
+int main() {
+    Empleado emp1;
+    Empleado emp2;
+
+    cout << "Ingresa el primer nombre del empleado 1: ";
+    cin >> emp1.nombre;
+    cout << "Ingresa el apellido paterno del empleado 1: ";
+    cin >> emp1.nombre;
+    cout << "Ingresa el salario mensual del empleado 1: ";
+    cin >> emp1.salarioMensual;
+    if (emp1.salarioMensual < 0) {
+        emp1.salarioMensual = 0.0;
+    }
+
+    cout << endl;
+
+    cout << "Ingresa el primer nombre del empleado 2: ";
+    cin >> emp2.nombre;
+    cout << "Ingresa el apellido paterno del empleado 2: ";
+    cin >> emp2.apellidoPaterno;
+    cout << "Ingresa el salario mensual del empleado 2: ";
+    cin >> emp2.salarioMensual;
+    if (emp2.salarioMensual < 0) {
+        emp2.salarioMensual = 0.0;
+    }
+
+    cout << "" << endl;
+    cout << " SALARIOS ANUALES INICIALES " << endl;
+    cout << emp1.nombre << " " << emp1.apellidoPaterno 
+         << "  Salario anual: $" << emp1.obtenerSalarioAnual() << endl;
+    cout << emp2.nombre << " " << emp2.apellidoPaterno 
+         << "  Salario anual: $" << emp2.obtenerSalarioAnual() << endl;
+
+    emp1.salarioMensual = emp1.salarioMensual * 1.10;
+    emp2.salarioMensual = emp2.salarioMensual * 1.10;
+
+    cout << "" << endl;
+    cout << "SALARIOS ANUALES TRAS EL AUMENTO DEL 10%" << endl;
+    cout << emp1.nombre << " " << emp1.apellidoPaterno 
+         << "  Salario anual: $" << emp1.obtenerSalarioAnual() << endl;
+    cout << emp2.nombre << " " << emp2.apellidoPaterno 
+         << "  Salario anual: $" << emp2.obtenerSalarioAnual() << endl;
+
+    return 0;
+}
+

@@ -1,0 +1,36 @@
+class Empleado:
+    def __init_(self):
+        #Atributos inicializados en el constructor __init__
+        self.nombre = ""
+        self.apellidoPaterno = ""
+        self.salarioMensual = 0.0
+        
+    def obtenerSalarioAnual(self):
+        return self.salarioMensual*12
+        
+#FacturaTest
+emp1 = Empleado()
+emp2 = Empleado()
+
+emp1.nombre = input("Ingresa el nombre del empleado 1: ")
+emp1.apellidoPaterno = input("Ingresa el apellido paterno del empleado 1: ")
+emp1.salarioMensual = float(input("Salario mensual del empleado 1: "))
+
+emp1.salarioMensual = 0.0 if emp1.salarioMensual<0 else emp1.salarioMensual
+
+emp2.nombre = input("Ingresa el nombre del empleado 2: ")
+emp2.apellidoPaterno = input("Ingresa el apellido paterno del empleado 2: ")
+emp2.salarioMensual = float(input("Salario mensual del empleado 2: "))
+
+emp2.salarioMensual = 0.0 if emp2.salarioMensual<0 else emp2.salarioMensual
+
+print("Salario Anual del empleado 1: ",emp1.obtenerSalarioAnual())
+print("Salario anual del empleado 2: ",emp2.obtenerSalarioAnual())
+
+emp1.salarioMensual = emp1.salarioMensual * 1.10
+emp2.salarioMensual = emp2.salarioMensual + 1.10
+
+print("Salario despues del aumento del 10%")
+print("Salario Anual del empleado 1: ",emp1.obtenerSalarioAnual())
+print("Salario anual del empleado 2: ",emp2.obtenerSalarioAnual())
+

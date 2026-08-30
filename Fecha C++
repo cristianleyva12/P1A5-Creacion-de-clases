@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+class Fecha {
+    
+public:
+    int mes;
+    int dia;
+    int anio;
+
+    Fecha(){
+        mes = 0;
+        dia = 0;
+        anio = 0;
+    }
+    
+    void mostrarFecha(){
+        cout << mes << "/" << dia << "/" << anio << endl;
+    }
+    
+};
+int main() {
+
+    Fecha miFecha;
+
+    cout << "Ingresa el mes (1-12): ";
+    cin >> miFecha.mes;
+    
+    if (miFecha.mes >= 13) {
+        miFecha.mes = 0;
+    }
+
+    cout << "Ingresa el dia (1-31): ";
+    cin >> miFecha.dia;
+    
+    if (miFecha.dia >= 32) {
+        miFecha.dia = 0;
+    }
+
+    cout << "Ingresa el anio: ";
+    cin >> miFecha.anio;
+
+    cout << "\nLa fecha ingresada es: ";
+    miFecha.mostrarFecha();
+
+    return 0;
+}
